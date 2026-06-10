@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #FAF8F3;
+  --color-surface: #FFFFFF;
+  --color-text: #151515;
+  --color-gold: #C9A84C;
+  --color-gold-light: #E8D5A3;
+  --color-gold-dark: #8B7355;
+  --color-border: #E8DFCF;
+  --color-border-light: #F0E8DC;
+  --color-charcoal: #2C2C2C;
+  --color-sand: #F5F0E8;
+  --color-cream: #FDFCF9;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-text);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-dark);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+@keyframes gold-sweep {
+  0% { transform: translateX(-100%) rotate(-15deg); }
+  100% { transform: translateX(200%) rotate(-15deg); }
+}
+
+@keyframes gold-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(201, 168, 76, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(201, 168, 76, 0.35); }
+}
+
+@keyframes glow-subtle {
+  0%, 100% { box-shadow: 0 0 8px rgba(201, 168, 76, 0); }
+  50% { box-shadow: 0 0 20px rgba(201, 168, 76, 0.15); }
+}
+
+@keyframes reveal-mask {
+  0% { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes line-draw {
+  0% { transform: scaleX(0); transform-origin: left; }
+  100% { transform: scaleX(1); transform-origin: left; }
+}
+
+.animate-gold-sweep {
+  animation: gold-sweep 6s ease-in-out infinite;
+}
+
+.animate-gold-pulse {
+  animation: gold-pulse 3s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-glow-subtle {
+  animation: glow-subtle 3s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Luxury scrollbar refinements */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-dark);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
